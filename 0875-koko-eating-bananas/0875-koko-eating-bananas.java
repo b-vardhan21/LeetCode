@@ -23,8 +23,9 @@ class Solution {
     boolean CanEatInTime(int[] piles, int k, int h){
         long hours = 0;
         for(int pile : piles){
-            hours += (int)Math.ceil(pile*1.0/k);
-            //if(pile % k!=0) hours++;
+            int div = pile/k;
+            hours += div;
+            if(pile % k!=0) hours++;
         }
         
         return hours <= h;
